@@ -1,0 +1,32 @@
+substitutions:
+  name: "esp-02s-base"
+  friendly_name: "esp-02s-base"
+  project_name: "esp-02s-base"
+  project_version: "1.0"
+  relay_restore_mode: RESTORE_DEFAULT_OFF
+ 
+ esphome:
+  name: "${name}"
+  name_add_mac_suffix: true
+  project:
+    name: "${project_name}"
+    version: "${project_version}"
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+ap: {} 
+
+captive_portal:
+
+dashboard_import:
+  package_import_url: github://ezhische/esphome_base/esp-02s-base.yaml
